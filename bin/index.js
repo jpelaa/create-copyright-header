@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 const chalk = require("chalk");
-const pkgDir = require("pkg-dir");
 const { onFatalError } = require("../lib/utils");
 
 //------------------------------------------------------------------------------
@@ -8,8 +9,6 @@ const { onFatalError } = require("../lib/utils");
 
 (async function main() {
   console.log(chalk.yellow("Copyright header"));
-  const rootDir = await pkgDir(__dirname);
-
-  await require("../lib/initializer").initialize(rootDir);
+  await require("../lib/initializer").initialize();
   return;
 })().catch(onFatalError);
