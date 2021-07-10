@@ -3,7 +3,7 @@
 const { title } = require("../lib/title");
 const usageGuide = require("../lib/usageGuide");
 const commandLineArgs = require("command-line-args");
-const optionDefinitions = [{ name: "help", alias: "h", type: Boolean }];
+const optionDefinitions = require("../static/options");
 const { onFatalError } = require("../lib/utils");
 const options = commandLineArgs(optionDefinitions);
 
@@ -13,11 +13,15 @@ const options = commandLineArgs(optionDefinitions);
 
 (async function main() {
   title();
-
-  if (options && Object.keys(options).length > 0 && options.help) {
-    usageGuide();
+  if (options && Object.keys(options).length > 0) {
+    if (options.help) {
+      usageGuide();
+    } else if (options.generate) {
+      await require("../lib/initializer").initialize();
+    }
   } else {
-    await require("../lib/initializer").initialize();
+    usageGuide();
   }
+
   return;
 })().catch(onFatalError);

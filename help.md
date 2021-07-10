@@ -1,6 +1,6 @@
 create-copyright-header - commandline generate copyright header
 
-Usage: npx create-copyright-header
+Usage: npx create-copyright-header --generate
 create-copyright-header is a tool for generating copyright & license header, applying to given the directories and selected filetypes and updating at beginning of the files.
 
 we take input from user for directories they want to change, file type they want to update.
