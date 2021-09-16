@@ -1,8 +1,9 @@
 # Create-copyright-header
 
 This is CLI - to add copyright and license header to all files in the project
-<img alt="Logo" align="right" src="https://github.com/jpelaa/create-copyright-header/blob/main/copyright.png" width="20%" />
-
+<p align='center'>
+<img alt="Logo" align="right" src="https://github.com/jpelaa/create-copyright-header/blob/main/create-copyright-header.png" />
+</p>
 ## Prerequisites
 
 CLI require Node 8.9 or higher, together
